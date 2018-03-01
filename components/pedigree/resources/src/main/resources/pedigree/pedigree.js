@@ -26,6 +26,7 @@ define([
         "pedigree/view/candidateGeneLegend",
         "pedigree/view/causalGeneLegend",
         "pedigree/view/rejectedGeneLegend",
+        "pedigree/view/negativeGeneLegend",
         "pedigree/view/carrierGeneLegend",
         "pedigree/view/hpoLegend",
         "pedigree/view/patientDropLegend",
@@ -120,6 +121,7 @@ define([
             this._candidateGeneLegend = new CandidateGeneLegend();
             this._causalGeneLegend = new CausalGeneLegend();
             this._rejectedGeneLegend = new RejectedGeneLegend();
+            this._negativeGeneLegend = new NegativeGeneLegend();
             this._carrierGeneLegend = new CarrierGeneLegend();
             this._hpoLegend = new HPOLegend();
             this._cancerLegend = new CancerLegend();
@@ -545,6 +547,8 @@ define([
                 return this.getCausalGeneLegend();
             } else if (geneStatus == "rejected") {
                 return this.getRejectedGeneLegend();
+            } else if (geneStatus == "negative") {
+                return this.getNegativeGeneLegend();
             } else if (geneStatus == "carrier") {
                 return this.getCarrierGeneLegend();
             }
@@ -573,6 +577,14 @@ define([
          */
         getRejectedGeneLegend: function() {
             return this._rejectedGeneLegend;
+        },
+
+        /**
+         * @method getNegativeGeneLegend
+         * @return {Legend} Responsible for managing negative genes
+         */
+        getNegativeGeneLegend: function() {
+            return this._negativeGeneLegend;
         },
 
         /**

@@ -250,6 +250,7 @@ define([
               var candidateGenes = [];
               var solvedGenes    = [];
               var negativeGenes  = [];
+              var rejectedGenes  = [];
               var carrierGenes   = [];
               nodeGenes.each( function(item) {
                   if (candidateGeneSelected && (item.status == "candidate")) {
@@ -259,6 +260,9 @@ define([
                       solvedGenes.push(item.id);
                   }
                   if (item.status == "rejected") {
+                      rejected.push(item.id);
+                  }
+                  if (item.status == "negative") {
                       negativeGenes.push(item.id);
                   }
                   if (item.status == "carrier") {

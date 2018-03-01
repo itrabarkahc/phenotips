@@ -973,6 +973,16 @@ define([
         },
 
         /**
+         * Sets the list of negative genes of this person to the given list
+         *
+         * @method setNegativeGenes
+         * @param {Array} genes List of gene names (as strings)
+         */
+        setNegativeGenes: function(genes) {
+            this._setGenes(genes, "negative");
+        },
+
+        /**
          * Sets the list of carrier genes of this person to the given list
          *
          * @method setCarrierGenes
@@ -993,6 +1003,10 @@ define([
 
         getRejectedGenes: function() {
             return this._getGeneArray("rejected");
+        },
+
+        getNegativeGenes: function() {
+            return this._getGeneArray("negative");
         },
 
         getCarrierGenes: function() {
@@ -1225,6 +1239,7 @@ define([
             var inactiveLostContact = this.isProband() || !editor.getGraph().isRelatedToProband(this.getID());
 
             var rejectedGeneList = this.getRejectedGenes();
+            var negativeGeneList = this.getNegativeGenes();
             var carrierGeneList  = this.getCarrierGenes();
 
             var disabledDeathDetails = (this.getLifeStatus() != 'stillborn' && this.getLifeStatus() != 'miscarriage' && this.getLifeStatus() != 'deceased');
@@ -1247,6 +1262,7 @@ define([
                 causal_genes:    {value : this.getCausalGenes(), disabled: false},
                 carrier_genes:   {value : this.getCarrierGenes(), disabled: false},
                 rejected_genes:  {value : rejectedGeneList, disabled: true, inactive: (rejectedGeneList.length == 0)},
+                negative_genes:  {value : negativeGeneList, disabled: true, inactive: (negativeGeneList.length == 0)},
                 adopted:         {value : this.getAdopted(), inactive: cantChangeAdopted},
                 state:           {value : this.getLifeStatus(), inactive: inactiveStates, disabled: disabledStates},
                 aliveandwell:    {value : this.getAliveAndWell(), inactive: this.isFetus()},

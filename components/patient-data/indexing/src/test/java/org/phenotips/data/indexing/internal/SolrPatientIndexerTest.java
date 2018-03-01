@@ -91,7 +91,8 @@ public class SolrPatientIndexerTest
 {
     private static final String STATUS_KEY = "status";
 
-    private static final List<String> STATUS_VALUES = Arrays.asList("candidate", "rejected", "solved", "carrier");
+    private static final List<String> STATUS_VALUES = Arrays.asList("candidate", "rejected", "negative", "solved",
+        "carrier");
 
     @Rule
     public MockitoComponentMockingRule<PatientIndexer> mocker =

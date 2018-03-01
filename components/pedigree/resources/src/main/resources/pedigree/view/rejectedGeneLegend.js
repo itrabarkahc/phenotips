@@ -1,15 +1,15 @@
 /**
- * Specific version of GeneLegend for rejected genes. It is nbot displayed but used
+ * Specific version of GeneLegend for rejected genes. It is not displayed but used
  * because of the way gene update machinery works (to update gene IDs for gene known only by their symbols)
  *
- * @class RejecetdGeneLegend
+ * @class RejecetedGeneLegend
  * @constructor
  */
  define(["pedigree/view/geneLegend"], function(GeneLegend){
     var RejectedGeneLegend = Class.create( GeneLegend, {
 
         initialize: function($super) {
-            $super('Negative Genes', 'genes',
+            $super('Rejected Genes', 'genes',
                    "rejected",
                    [], // these are never displayed in a legend so don't need colours
                    "getRejectedGenes",

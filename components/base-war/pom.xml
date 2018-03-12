@@ -103,7 +103,7 @@
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-resource-default</artifactId>
+      <artifactId>xwiki-platform-resource-temporary</artifactId>
       <version>${xwiki.version}</version>
       <scope>provided</scope>
     </dependency>
@@ -116,6 +116,12 @@
     <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-resource-api</artifactId>
+      <version>${xwiki.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-resource-default</artifactId>
       <version>${xwiki.version}</version>
       <scope>provided</scope>
     </dependency>
@@ -146,6 +152,12 @@
     <dependency>
       <groupId>org.xwiki.platform</groupId>
       <artifactId>xwiki-platform-url-scheme-standard</artifactId>
+      <version>${xwiki.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.xwiki.platform</groupId>
+      <artifactId>xwiki-platform-url-container</artifactId>
       <version>${xwiki.version}</version>
       <scope>provided</scope>
     </dependency>

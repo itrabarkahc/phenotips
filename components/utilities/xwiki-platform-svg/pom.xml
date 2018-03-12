@@ -71,7 +71,7 @@
     </dependency>
     <dependency>
       <groupId>org.xwiki.platform</groupId>
-      <artifactId>xwiki-platform-resource-default</artifactId>
+      <artifactId>xwiki-platform-resource-temporary</artifactId>
       <version>${xwiki.version}</version>
     </dependency>
     <dependency>
